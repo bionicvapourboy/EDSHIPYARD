@@ -1,29 +1,49 @@
 'use strict';
+//Each window containing EDShipyard launches this function
 window.edshipyard = new (function() {
 	
 	var EMPTY_OBJ = {};
 	var EMPTY_ARR = [];
+	//Variable for a timeout that after 500 seconds what does it do? It's related to what? Presence or pressure? and what problems are there to long press some element? (to verify)
 	var TIMEOUT_LONGPRESS = 500;
+	//Generate an array with the names of the groups of modules
 	var GROUPS = ['hardpoint','utility','component','military','internal'];
+	//Generate an object with different properties (with the same name as the values present in the GROUPS array) and assign to each of them the value to be displayed for the group
 	var GROUP_LABEL = { hardpoint:'Hardpoints', utility:'Utility Mounts', component:'Core Internal', military:'Military', internal:'Optional Internal' };
+	//Generate an array with the names of the various core modules always present on each ship
 	var CORE_SLOT_NAME = ['Bulkhead', 'Power Plant', 'Thruster', 'Frame Shift Drive', 'Life Support', 'Power Distributor', 'Sensors', 'Fuel Tank'];
+	//Generate an array with abbreviations for each element of the array you predict
 	var CORE_SLOT_ABBR = ['BH','PP','TH','FD','LS','PD','SS','FT'];
+	//It generates the CORE_ABBR_SLOT object that has as its properties the abbreviations of the various Core Modules of the ships to which it then assigns their ordinal position 
+	//in the list as a value. In the second line, however, it remaps some alternative modules in the same slots. Apparently there is something that does not have Armor and Sensors in it's Core 
 	var CORE_ABBR_SLOT = { BH:0,PP:1,TH:2,FD:3,LS:4,PD:5,SS:6,FT:7,
 	                            RB:1,TM:2,FH:3,EC:4,PC:5,     FS:7 };
+	//Variable BOOST_MARGIN seems to be a multiplier that indicates 0.5% (I should hear SHEUZZO if you have any idea what this margin indicates)					
 	var BOOST_MARGIN = 0.005;
+	//ID number of the HATCH slot from Elite Dangerous logs
 	var SHIP_HATCH_ID = 49180;
+	//Variable that indicates the maximum class that can have a slot
 	var MAX_SLOT_CLASS = 8;
+	//Variable that indicates the maximum class that a Power Distributor can have? (to verify)
 	var MAX_POWER_DIST = 8;
+	//Is it perhaps a modifier linked to some engineering? (hear SHEUZZO)
 	var TOTAL_POWER_DIST = 12;
+	//Variable with the maximum energy priority value that a module can have
 	var MAX_POWER_PRIORITY = 5;
+	//Variable with the highest degree of engineering that can have a module
 	var MAX_BLUEPRINT_GRADE = 5;
+	//Variable that indicates the multiplier for the maximum current supplied by a Power Plant in case it is damaged
 	var MAX_DAMAGED_PWRCAP = 0.5;
+	//I do not know ... Maybe a variable that takes into account the version of the code? (verify) [line 1630 uses this variable]
 	var HASH_VERSION = 12;
+	//Variable indicating which icon to use for unknown icons? (to verify)
 	var HTML_ICON_UNKNOWN = '<span class="icon unknown"></span>';
+	//Generate the HTML_ICON_MOUNT object that has the type of Hard Point assembly as its properties and associates it with the corresponding icon (HTML_ICON_MOUNT.F will display the Fixed icon)
 	var HTML_ICON_MOUNT = { F:'<span class="icon mountFixed"></span>', G:'<span class="icon mountGimballed"></span>', T:'<span class="icon mountTurreted"></span>' };
+	//Generate the HTML_ICON_MISSILE object that has the missile type property and associates the corresponding icon (HTML_ICON_MISSILE.S will display the Seeker icon)
 	var HTML_ICON_MISSILE = { D:'<span class="icon missileDumbfire"></span>', S:'<span class="icon missileSeeking"></span>' };
 	
-	
+	//It generates an object whose properties in turn contain empty objects. (predisposition for something?) (to verify)
 	var cache = {
 		formatNumText: {},
 		formatPctText: {},
@@ -42,6 +62,7 @@ window.edshipyard = new (function() {
 		hashVersionMap: {},
 		storedmodules: {},
 	};
+	//Generate an object with a set of simulation options I guess (to verify)
 	var current = {
 		beta: false,
 		hashlock: false,
@@ -66,23 +87,38 @@ window.edshipyard = new (function() {
 		slot: null,
 	};
 	
-	
+	//Generate various variables as aliases to invoke mathematical functions
 	var
+		//Natural logarithm of 2 [0.693]
 		LN2 = Math.LN2,
+		//Natural logarithm of 10 [2.302]
 		LN10 = Math.LN10,
+		//Returns the absolute value
 		abs = Math.abs,
+		//Returns the smallest integer greater than or equal to a given number [0.9=1 7.4=8 -7.1=-7]
 		ceil = Math.ceil,
+		//Returns the value of e raised for the given number
 		exp = Math.exp,
+		//Inverse of ceil. Returns the largest integer that is less than or equal to a given number [0.9=0 7.4=7 -7.1=-8]
 		floor = Math.floor,
+		//Returns the value of the natural logarithm of the given number
 		log = Math.log,
+		//Returns the largest number of a list or array of numbers
 		max = Math.max,
+		//Returns the smallest number of a list or array of numbers
 		min = Math.min,
+		//Given two numbers, calculate the power of the first high number per second
 		pow = Math.pow,
+		//Returns a pseudo-random float number from 0 inclusive to 1 excluded
 		random = Math.random,
+		//Rounds to the nearest whole number
 		round = Math.round,
+		//Returns the sign of a number [1 if positive, -1 if negative, 0 if 0]
 		sign = Math.sign,
+		//Returns the value of the square root of the given number
 		sqrt = Math.sqrt
 	;
+	//Generate variables with contain more compelsse mathematical functions
 	var
 		atanh = Math.atanh || function(x) {
 			return (log((1 + x) / (1 - x)) / 2);
