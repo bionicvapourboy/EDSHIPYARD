@@ -1,0 +1,12 @@
+{
+  "name": "ED:SHIPYARD",
+  "version": "1.0.0",
+  "description": "",
+  "main": "edsy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "taleden",
+  "license": "CREATIVE COMMONS ATTRIBUTION NON-COMMERCIAL 4.0"
+}
