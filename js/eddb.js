@@ -952,7 +952,7 @@ var eddb = {
 			},
 		},
 		63 : {
-			fdid:128049249, fdname:'KraitMkII',
+			fdid:128816567, fdname:'KraitMkII',
 			id:63, stype:'co', name:'Krait MkII', class:2, cost:42409425, retail:208969450,
 			faction:'Alliance',
 			topspd:240, bstspd:330, mnv:0, shields:220, armour:220, mass:320,
@@ -1010,7 +1010,7 @@ var eddb = {
 			},
 		},
 		10 : {
-			fdid:128149376, fdname:'Crusader',
+			fdid:128816581, fdname:'Crusader',
 			id:10, stype:'co', name:'Alliance Crusader', class:2, cost:22866341, retail:19382252,
 			faction:'Alliance',
 			topspd:180, bstspd:300, mnv:0, shields:200, armour:300, mass:500,
@@ -2230,7 +2230,9 @@ var eddb = {
 		87245 : { mtype:'hex', cost:  845200, name:'Shock Cannon',                mount:'G',              class:2, rating:'D', mass: 4.00, integ:51, pwrdraw:0.61, boottime:0,dps:102.100, damage:10.210, distdraw:0.58 , thmload:2.10, pierce: 40, maxrng:3000, shotspd:1200,rof:10.0  , bstint:0.1  ,                      ammoclip:16, ammomax: 240,            rldtime:6.0, brcdmg: 7.1, minbrc:40, maxbrc:80,             dmgtype:'K', kinwgt:1, dmgfall:2500, nosingleton:1, fdid:128834003, fdname:'Hpt_PlasmaShockCannon_Gimbal_Medium' },
 		87256 : { mtype:'hex', cost: 1659200, name:'Shock Cannon',                mount:'T',              class:2, rating:'E', mass: 4.00, integ:51, pwrdraw:0.50, boottime:0, dps:89.600, damage: 8.960, distdraw:0.39 , thmload:1.24, pierce: 40, maxrng:3000, shotspd:1200,rof:10.0  , bstint:0.1  ,                      ammoclip:16, ammomax: 240,            rldtime:6.0, brcdmg: 6.3, minbrc:40, maxbrc:80,             dmgtype:'K', kinwgt:1, dmgfall:2500, nosingleton:1, fdid:128834004, fdname:'Hpt_PlasmaShockCannon_Turret_Medium' },
 		
-		88220 : { mtype:'hex', cost:     NaN, name:'Guardian Gauss Cannon',       mount:'F',              class:2, rating:'B', mass: 4.00, integ:42, pwrdraw:2.61, boottime:0, dps:84.337, damage:70.0  , distdraw:7.20 ,thmload:25.00, pierce:140, maxrng:3000,               rof:1.205, bstint:0.83 ,                      ammoclip: 1, ammomax:  80,            rldtime:1.0, brcdmg:35.0, minbrc:20, maxbrc:40,             dmgtype:'TX', thmwgt:35/70, axewgt:35/70, dmgfall:1500, fdid:128833687, fdname:'Hpt_Guardian_GaussCannon_Fixed_Medium' }, // TODO: verify
+		88218 : { mtype:'hex', cost:  147859, name:'Guardian Shard Cannon',       mount:'F',              class:1, rating:'D', mass: 2.00, integ:34, pwrdraw:0.87, boottime:0, dps:40,     damage: 2.0  , distdraw:0.42 , thmload:0.7,  pierce: 30, maxrng:1700, shotspd:1133, rof:1.7  , bstint:0.180,                      ammoclip: 5, ammomax: 180, rounds:12, rldtime:5.0, brcdmg: 1.6, minbrc:60, maxbrc:80,             dmgtype:'T',  thmwgt:1, dmgfall:1700, fdid:128891609, fdname:'Hpt_Guardian_ShardCannon_Fixed_Small' }, // TODO: verify
+		88219 : { mtype:'hex', cost:  489450, name:'Guardian Shard Cannon',       mount:'T',              class:1, rating:'F', mass: 2.00, integ:34, pwrdraw:0.72, boottime:0, dps:22.2,   damage: 1.1  , distdraw:0.36 , thmload:0.6,  pierce: 30, maxrng:1700, shotspd:1133, rof:1.7  , bstint:0.180,                      ammoclip: 5, ammomax: 180, rounds:12, rldtime:5.0, brcdmg: 0.9, minbrc:60, maxbrc:80,             dmgtype:'T',  thmwgt:1, dmgfall:1700, fdid:128891608, fdname:'Hpt_Guardian_ShardCannon_Turret_Small' }, // TODO: verify
+		88220 : { mtype:'hex', cost:     NaN, name:'Guardian Gauss Cannon',       mount:'F',              class:2, rating:'B', mass: 4.00, integ:42, pwrdraw:2.61, boottime:0, dps:84.337, damage:70.0  , distdraw:7.20 , thmload:25.00,pierce:140, maxrng:3000,               rof:1.205, bstint:0.83 ,                      ammoclip: 1, ammomax:  80,            rldtime:1.0, brcdmg:35.0, minbrc:20, maxbrc:40,             dmgtype:'TX', thmwgt:35/70, axewgt:35/70, dmgfall:1500, fdid:128833687, fdname:'Hpt_Guardian_GaussCannon_Fixed_Medium' }, // TODO: verify
 		88223 : { mtype:'hex', cost:     NaN, name:'Guardian Plasma Charger',     mount:'F',              class:2, rating:'B', mass: 4.00, integ:42, pwrdraw:2.13, boottime:0, dps:42.5  , damage: 5.0  , distdraw:1.25 , thmload:5.21, pierce: 80, maxrng:3000, shotspd:1200, rof:0.5  , bstint:2.0  ,                      ammoclip:15, ammomax: 200, rounds:17, rldtime:3.0, brcdmg: 1.3, minbrc:50, maxbrc:80,             dmgtype:'AX', abswgt:2.5/5, axewgt:2.5/5, dmgfall:1000, fdid:128833998, fdname:'Hpt_Guardian_PlasmaLauncher_Fixed_Medium' }, // TODO: verify // TODO: model charge mechanic?
 		88255 : { mtype:'hex', cost:     NaN, name:'Guardian Plasma Charger',     mount:'T',              class:2, rating:'E', mass: 4.00, integ:42, pwrdraw:2.01, boottime:0, dps:34.0  , damage: 4.0  , distdraw:1.40 , thmload:5.80, pierce: 80, maxrng:3000, shotspd:1200, rof:0.5  , bstint:2.0  ,                      ammoclip:15, ammomax: 200, rounds:17, rldtime:3.0, brcdmg: 1.0, minbrc:50, maxbrc:80,             dmgtype:'AX', abswgt:2/4, axewgt:2/4, dmgfall:1000, fdid:128833999, fdname:'Hpt_Guardian_PlasmaLauncher_Turret_Medium' }, // TODO: verify // TODO: model charge mechanic?
 	//	88323 : { mtype:'hex', cost:     NaN, name:'Guardian Plasma Charger',     mount:'F',              class:3, rating:'?', mass: 8.00, integ:42, pwrdraw:2.13, boottime:0, dps:42.5  , damage: 5.0  , distdraw:1.25 , thmload:5.21, pierce: 80, maxrng:3000, shotspd:1200, rof:0.5  , bstint:2.0  ,                      ammoclip:15, ammomax: 200, rounds:17, rldtime:3.0, brcdmg: 1.3, minbrc:50, maxbrc:80,             dmgtype:'AX', abswgt:2.5/5, axewgt:2.5/5, dmgfall:1000, fdid:128834783, fdname:'Hpt_Guardian_PlasmaLauncher_Fixed_Large' }, // TODO: all stats // TODO: model charge mechanic?
@@ -2334,7 +2336,7 @@ var eddb = {
 		41230 : { mtype:'cpp', cost:    17800, name:'Power Plant', class:2, rating:'C', mass:  1.30, integ: 51, pwrcap: 8.00, heateff:0.50, fdid:128064035, fdname:'Int_Powerplant_Size2_Class3' },
 		41220 : { mtype:'cpp', cost:    53410, name:'Power Plant', class:2, rating:'B', mass:  2.00, integ: 61, pwrcap: 8.80, heateff:0.45, fdid:128064036, fdname:'Int_Powerplant_Size2_Class4' },
 		41210 : { mtype:'cpp', cost:   160220, name:'Power Plant', class:2, rating:'A', mass:  1.30, integ: 56, pwrcap: 9.60, heateff:0.40, fdid:128064037, fdname:'Int_Powerplant_Size2_Class5' },
-		41211 : { mtype:'cpp', cost:   162000, name:'Guardian Hybrid Power Plant', class:2, rating:'A', mass: 1.50, integ: 56, pwrcap:12.70, heateff:0.5 , fdid:128833988, fdname:'Int_GuardianPowerplant_Size2' }, // TODO: verify
+		41211 : { mtype:'cpp', cost:   162000, name:'Guardian Hybrid Power Plant', class:2, rating:'A', mass: 1.50, integ: 56, pwrcap:12.70, heateff:0.5 , fdid:128833988, fdname:'	' }, // TODO: verify
 		
 		41350 : { mtype:'cpp', cost:     6270, name:'Power Plant', class:3, rating:'E', mass:  5.00, integ: 58, pwrcap: 8.00, heateff:1.00, fdid:128064038, fdname:'Int_Powerplant_Size3_Class1' },
 		41340 : { mtype:'cpp', cost:    18810, name:'Power Plant', class:3, rating:'D', mass:  2.00, integ: 51, pwrcap: 9.00, heateff:0.75, fdid:128064039, fdname:'Int_Powerplant_Size3_Class2' },
