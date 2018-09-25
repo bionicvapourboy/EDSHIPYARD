@@ -9,7 +9,7 @@ The Elite: Dangerous game logic and data in this file remains the property of Fr
 and is used here as authorized by Frontier Customer Services (https://forums.frontier.co.uk/showthread.php?t=5349).
 */
 var eddb = {
-	version : 3004,
+	version : 3005,
 	ship : {
 		 1 : {
 			fdid:128049249, fdname:'SideWinder',
@@ -949,6 +949,93 @@ var eddb = {
 				40113 : { cost:188072500, mass:60.00, fdid:128049378, fdname:'Cutter_Armour_Grade3' }, // Military Grade Composite // verify
 				40114 : { cost:444478020, mass:60.00, fdid:128049379, fdname:'Cutter_Armour_Mirrored' }, // Mirrored Surface Composite // verify
 				40115 : { cost:492541000, mass:60.00, fdid:128049380, fdname:'Cutter_Armour_Reactive' }, // Reactive Surface Composite // verify
+			},
+		},
+		63 : {
+			fdid:128049249, fdname:'KraitMkII',
+			id:63, stype:'co', name:'Krait MkII', class:2, cost:42409425, retail:208969450,
+			faction:'Alliance',
+			topspd:240, bstspd:330, mnv:0, shields:220, armour:220, mass:320,
+			minthrust:80.0, boostcost:13, pitch:26, yaw:10, roll:90, pitchacc:100, yawacc:50, rollacc:80, minpitch:14,
+			heatcap:100, heatdismin:3.27, heatdismax:42.58, fuelcost:50, hardness:55, masslock:17, crew:3,
+			slots:{
+				hardpoint:[3,3,3,2,2],
+				utility  :[0,0,0,0],
+				component:[1,7,6,5,4,7,6,5],
+				military :[],
+				internal :[6,6,5,5,4,3,3,2],
+			},
+			stock:{
+				hardpoint:[62160,62160,0,0,0,0,0],
+				utility  :[0,0,0,0,0,0,0,0],
+				component:[40131,41750,42650,43550,44450,45750,46650,47530],
+				military :[],
+				internal :[0,0,0,0,0,0,0,0,0],
+			},
+			module:{
+				40131 : { cost:        0, mass: 0.00, fdid:128049376, fdname:'Krait_Armour_Grade1' }, // Lightweight Alloy
+				40122 : { cost:16080787, mass:36.00, fdid:128049377, fdname:'Krait_Armour_Grade2' }, // Reinforced Alloy // verify
+				40113 : { cost:36181769, mass:67.00, fdid:128049378, fdname:'Krait_Armour_Grade3' }, // Military Grade Composite // verify
+				40114 : { cost:85509580, mass:67.00, fdid:128049379, fdname:'Krait_Armour_Mirrored' }, // Mirrored Surface Composite // verify
+				40115 : { cost:94756032, mass:67.00, fdid:128049380, fdname:'Krait_Armour_Reactive' }, // Reactive Surface Composite // verify
+			},
+		},
+		60 : {
+			fdid:128816588, fdname:'Challenger',
+			id:60, stype:'co', name:'Alliance Challenger', class:2, cost:28041035, retail:30472265,
+			faction:'Alliance',
+			topspd:130, bstspd:310, mnv:0, shields:220, armour:300, mass:450,
+			minthrust:80.0, boostcost:19, pitch:32, yaw:16, roll:90, pitchacc:100, yawacc:50, rollacc:80, minpitch:14,
+			heatcap:100, heatdismin:3.27, heatdismax:42.58, fuelcost:50, hardness:65, masslock:13, crew:2,
+			slots:{
+				hardpoint:[3,2,2,2,1,1,1],
+				utility  :[0,0,0,0],
+				component:[1,6,6,5,5,6,4,4],
+				military :[4,4,4],
+				internal :[6,6,3,3,2,2],
+			},
+			stock:{
+				hardpoint:[62160,62160,0,0,0,0,0],
+				utility  :[0,0,0,0,0,0,0,0],
+				component:[40131,41650,42650,43550,44550,45650,46450,47430],
+				military :[],
+				internal :[0,0,0,0,0,0],
+			},
+			module:{
+				40131 : { cost:        0, mass: 0.00, fdid:128049376, fdname:'Challenger_Armour_Grade1' }, // Lightweight Alloy
+				40122 : { cost:6803170, mass:40.00, fdid:128049377, fdname:'Challenger_Armour_Grade2' }, // Reinforced Alloy // verify
+				40113 : { cost:15307134, mass:78.00, fdid:128049378, fdname:'Challenger_Armour_Grade3' }, // Military Grade Composite // verify
+				40114 : { cost:36175859, mass:78.00, fdid:128049379, fdname:'Challenger_Armour_Mirrored' }, // Mirrored Surface Composite // verify
+				40115 : { cost:40087682, mass:78.00, fdid:128049380, fdname:'Challenger_Armour_Reactive' }, // Reactive Surface Composite // verify
+			},
+		},
+		10 : {
+			fdid:128149376, fdname:'Crusader',
+			id:10, stype:'co', name:'Alliance Crusader', class:2, cost:22866341, retail:19382252,
+			faction:'Alliance',
+			topspd:180, bstspd:300, mnv:0, shields:200, armour:300, mass:500,
+			minthrust:80.0, boostcost:19, pitch:32, yaw:16, roll:80, pitchacc:100, yawacc:50, rollacc:80, minpitch:14,
+			heatcap:100, heatdismin:3.27, heatdismax:42.58, fuelcost:50, hardness:65, masslock:13, crew:3,
+			slots:{
+				hardpoint:[3,2,2,1,1,1],
+				utility  :[0,0,0,0],
+				component:[1,6,6,5,5,6,4,4],
+				military :[4,4,4],
+				internal :[6,5,3,3,2,2],
+			},
+			stock:{
+				hardpoint:[62160,62160,0,0,0,0,0],
+				utility  :[0,0,0,0,0,0,0,0],
+				component:[40131,41650,42650,43550,44550,45650,46450,47430],
+				military :[],
+				internal :[0,0,0,0,0,0],
+			},
+			module:{
+				40131 : { cost:        0, mass: 0.00, fdid:128049376, fdname:'Crusader_Armour_Grade1' }, // Lightweight Alloy
+				40122 : { cost:6803170, mass:40.00, fdid:128049377, fdname:'Crusader_Armour_Grade2' }, // Reinforced Alloy // verify
+				40113 : { cost:15307134, mass:78.00, fdid:128049378, fdname:'Crusader_Armour_Grade3' }, // Military Grade Composite // verify
+				40114 : { cost:36175859, mass:78.00, fdid:128049379, fdname:'Crusader_Armour_Mirrored' }, // Mirrored Surface Composite // verify
+				40115 : { cost:40087682, mass:78.00, fdid:128049380, fdname:'Crusader_Armour_Reactive' }, // Reactive Surface Composite // verify
 			},
 		},
 	}, // eddb.ship{}
