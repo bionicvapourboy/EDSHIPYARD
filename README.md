@@ -10,10 +10,10 @@ This repository contains:
 
 1. [The license](LICENSE.md) applied to the original code.
 2. [The changelog](CHANGELOG.md) up to the current version, with preview of unreleased features.
-2. [The HTML code](index.html).
-3. [The css](css/edsy.css)
-4. [The app file](js/edsy.js)
-5. [A DB file](js/eddb.js).
+2. [The HTML code](index.html) the app rely on.
+3. [The CSS](css/edsy.css) file.
+4. [The app file](js/edsy.js) with main logic.
+5. [A DB file](js/eddb.js) with ship and module data.
 6. Fonts
 
 # ED:Shipyard - Ship Configurator
