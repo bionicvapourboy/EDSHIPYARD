@@ -2341,49 +2341,49 @@ var eddb = {
 		41230 : { mtype:'cpp', cost:    17800, name:'Power Plant', class:2, rating:'C', mass:  1.30, integ: 51, pwrcap: 8.00, heateff:0.50, fdid:128064035, fdname:'Int_Powerplant_Size2_Class3' },
 		41220 : { mtype:'cpp', cost:    53410, name:'Power Plant', class:2, rating:'B', mass:  2.00, integ: 61, pwrcap: 8.80, heateff:0.45, fdid:128064036, fdname:'Int_Powerplant_Size2_Class4' },
 		41210 : { mtype:'cpp', cost:   160220, name:'Power Plant', class:2, rating:'A', mass:  1.30, integ: 56, pwrcap: 9.60, heateff:0.40, fdid:128064037, fdname:'Int_Powerplant_Size2_Class5' },
-		41211 : { mtype:'cpp', cost:   162000, name:'Guardian Hybrid Power Plant', class:2, rating:'A', mass: 1.50, integ: 56, pwrcap:12.70, heateff:0.5 , fdid:128833988, fdname:'	' }, // TODO: verify
+		41211 : { mtype:'cpp', cost:   187360, name:'Guardian Hybrid Power Plant', class:2, rating:'A', mass: 1.50, integ: 56, pwrcap:12.70, heateff:0.5 , fdid:128833988, fdname:'	' }, // TODO: verify
 		
 		41350 : { mtype:'cpp', cost:     6270, name:'Power Plant', class:3, rating:'E', mass:  5.00, integ: 58, pwrcap: 8.00, heateff:1.00, fdid:128064038, fdname:'Int_Powerplant_Size3_Class1' },
 		41340 : { mtype:'cpp', cost:    18810, name:'Power Plant', class:3, rating:'D', mass:  2.00, integ: 51, pwrcap: 9.00, heateff:0.75, fdid:128064039, fdname:'Int_Powerplant_Size3_Class2' },
 		41330 : { mtype:'cpp', cost:    56440, name:'Power Plant', class:3, rating:'C', mass:  2.50, integ: 64, pwrcap:10.00, heateff:0.50, fdid:128064040, fdname:'Int_Powerplant_Size3_Class3' },
 		41320 : { mtype:'cpp', cost:   169300, name:'Power Plant', class:3, rating:'B', mass:  4.00, integ: 77, pwrcap:11.00, heateff:0.45, fdid:128064041, fdname:'Int_Powerplant_Size3_Class4' },
 		41310 : { mtype:'cpp', cost:   507910, name:'Power Plant', class:3, rating:'A', mass:  2.50, integ: 70, pwrcap:12.00, heateff:0.40, fdid:128064042, fdname:'Int_Powerplant_Size3_Class5' },
-		41311 : { mtype:'cpp', cost:   291600, name:'Guardian Hybrid Power Plant', class:3, rating:'A', mass: 2.90, integ: 70, pwrcap:15.80, heateff:0.5 , fdid:128833989, fdname:'Int_GuardianPowerplant_Size3' }, // TODO: verify
+		41311 : { mtype:'cpp', cost:   562081, name:'Guardian Hybrid Power Plant', class:3, rating:'A', mass: 2.90, integ: 70, pwrcap:15.80, heateff:0.5 , fdid:128833989, fdname:'Int_GuardianPowerplant_Size3' }, // TODO: verify
 		
 		41450 : { mtype:'cpp', cost:    19880, name:'Power Plant', class:4, rating:'E', mass: 10.00, integ: 72, pwrcap:10.40, heateff:1.00, fdid:128064043, fdname:'Int_Powerplant_Size4_Class1' },
 		41440 : { mtype:'cpp', cost:    59630, name:'Power Plant', class:4, rating:'D', mass:  4.00, integ: 64, pwrcap:11.70, heateff:0.75, fdid:128064044, fdname:'Int_Powerplant_Size4_Class2' },
 		41430 : { mtype:'cpp', cost:   178900, name:'Power Plant', class:4, rating:'C', mass:  5.00, integ: 80, pwrcap:13.00, heateff:0.50, fdid:128064045, fdname:'Int_Powerplant_Size4_Class3' },
 		41420 : { mtype:'cpp', cost:   536690, name:'Power Plant', class:4, rating:'B', mass:  8.00, integ: 96, pwrcap:14.30, heateff:0.45, fdid:128064046, fdname:'Int_Powerplant_Size4_Class4' },
 		41410 : { mtype:'cpp', cost:  1610080, name:'Power Plant', class:4, rating:'A', mass:  5.00, integ: 88, pwrcap:15.60, heateff:0.40, fdid:128064047, fdname:'Int_Powerplant_Size4_Class5' },
-		41411 : { mtype:'cpp', cost:   524880, name:'Guardian Hybrid Power Plant', class:4, rating:'A', mass: 5.90, integ: 88, pwrcap:20.60, heateff:0.5 , fdid:128833990, fdname:'Int_GuardianPowerplant_Size4' }, // TODO: verify
+		41411 : { mtype:'cpp', cost:  1686243, name:'Guardian Hybrid Power Plant', class:4, rating:'A', mass: 5.90, integ: 88, pwrcap:20.60, heateff:0.5 , fdid:128833990, fdname:'Int_GuardianPowerplant_Size4' }, // TODO: verify
 		
 		41550 : { mtype:'cpp', cost:    63010, name:'Power Plant', class:5, rating:'E', mass: 20.00, integ: 86, pwrcap:13.60, heateff:1.00, fdid:128064048, fdname:'Int_Powerplant_Size5_Class1' },
 		41540 : { mtype:'cpp', cost:   189040, name:'Power Plant', class:5, rating:'D', mass:  8.00, integ: 77, pwrcap:15.30, heateff:0.75, fdid:128064049, fdname:'Int_Powerplant_Size5_Class2' },
 		41530 : { mtype:'cpp', cost:   567110, name:'Power Plant', class:5, rating:'C', mass: 10.00, integ: 96, pwrcap:17.00, heateff:0.50, fdid:128064050, fdname:'Int_Powerplant_Size5_Class3' },
 		41520 : { mtype:'cpp', cost:  1701320, name:'Power Plant', class:5, rating:'B', mass: 16.00, integ:115, pwrcap:18.70, heateff:0.45, fdid:128064051, fdname:'Int_Powerplant_Size5_Class4' },
 		41510 : { mtype:'cpp', cost:  5103950, name:'Power Plant', class:5, rating:'A', mass: 10.00, integ:106, pwrcap:20.40, heateff:0.40, fdid:128064052, fdname:'Int_Powerplant_Size5_Class5' },
-		41511 : { mtype:'cpp', cost:   944790, name:'Guardian Hybrid Power Plant', class:5, rating:'A', mass:11.70, integ:106, pwrcap:26.90, heateff:0.5 , fdid:128833991, fdname:'Int_GuardianPowerplant_Size5' }, // TODO: verify
+		41511 : { mtype:'cpp', cost:  5058729, name:'Guardian Hybrid Power Plant', class:5, rating:'A', mass:11.70, integ:106, pwrcap:26.90, heateff:0.5 , fdid:128833991, fdname:'Int_GuardianPowerplant_Size5' }, // TODO: verify
 		
 		41650 : { mtype:'cpp', cost:   199750, name:'Power Plant', class:6, rating:'E', mass: 40.00, integ:102, pwrcap:16.80, heateff:1.00, fdid:128064053, fdname:'Int_Powerplant_Size6_Class1' },
 		41640 : { mtype:'cpp', cost:   599240, name:'Power Plant', class:6, rating:'D', mass: 16.00, integ: 90, pwrcap:18.90, heateff:0.75, fdid:128064054, fdname:'Int_Powerplant_Size6_Class2' },
 		41630 : { mtype:'cpp', cost:  1797730, name:'Power Plant', class:6, rating:'C', mass: 20.00, integ:113, pwrcap:21.00, heateff:0.50, fdid:128064055, fdname:'Int_Powerplant_Size6_Class3' },
 		41620 : { mtype:'cpp', cost:  5393180, name:'Power Plant', class:6, rating:'B', mass: 32.00, integ:136, pwrcap:23.10, heateff:0.45, fdid:128064056, fdname:'Int_Powerplant_Size6_Class4' },
 		41610 : { mtype:'cpp', cost: 16179530, name:'Power Plant', class:6, rating:'A', mass: 20.00, integ:124, pwrcap:25.20, heateff:0.40, fdid:128064057, fdname:'Int_Powerplant_Size6_Class5' },
-		41611 : { mtype:'cpp', cost:  1700610, name:'Guardian Hybrid Power Plant', class:6, rating:'A', mass:23.40, integ:124, pwrcap:33.30, heateff:0.5 , fdid:128833992, fdname:'Int_GuardianPowerplant_Size6' }, // TODO: verify
+		41611 : { mtype:'cpp', cost: 15176184, name:'Guardian Hybrid Power Plant', class:6, rating:'A', mass:23.40, integ:124, pwrcap:33.30, heateff:0.5 , fdid:128833992, fdname:'Int_GuardianPowerplant_Size6' }, // TODO: verify
 		
 		41750 : { mtype:'cpp', cost:   633200, name:'Power Plant', class:7, rating:'E', mass: 80.00, integ:118, pwrcap:20.00, heateff:1.00, fdid:128064058, fdname:'Int_Powerplant_Size7_Class1' },
 		41740 : { mtype:'cpp', cost:  1899600, name:'Power Plant', class:7, rating:'D', mass: 32.00, integ:105, pwrcap:22.50, heateff:0.75, fdid:128064059, fdname:'Int_Powerplant_Size7_Class2' },
 		41730 : { mtype:'cpp', cost:  5698790, name:'Power Plant', class:7, rating:'C', mass: 40.00, integ:131, pwrcap:25.00, heateff:0.50, fdid:128064060, fdname:'Int_Powerplant_Size7_Class3' },
 		41720 : { mtype:'cpp', cost: 17096370, name:'Power Plant', class:7, rating:'B', mass: 64.00, integ:157, pwrcap:27.50, heateff:0.45, fdid:128064061, fdname:'Int_Powerplant_Size7_Class4' },
 		41710 : { mtype:'cpp', cost: 51289110, name:'Power Plant', class:7, rating:'A', mass: 40.00, integ:144, pwrcap:30.00, heateff:0.40, fdid:128064062, fdname:'Int_Powerplant_Size7_Class5' },
-		41711 : { mtype:'cpp', cost:  3061100, name:'Guardian Hybrid Power Plant', class:7, rating:'A', mass:46.80, integ:144, pwrcap:39.60, heateff:0.5 , fdid:128833993, fdname:'Int_GuardianPowerplant_Size7' }, // TODO: verify
+		41711 : { mtype:'cpp', cost: 45528551, name:'Guardian Hybrid Power Plant', class:7, rating:'A', mass:46.80, integ:144, pwrcap:39.60, heateff:0.5 , fdid:128833993, fdname:'Int_GuardianPowerplant_Size7' }, // TODO: verify
 		
 		41850 : { mtype:'cpp', cost:  2007240, name:'Power Plant', class:8, rating:'E', mass:160.00, integ:135, pwrcap:24.00, heateff:1.00, fdid:128064063, fdname:'Int_Powerplant_Size8_Class1' },
 		41840 : { mtype:'cpp', cost:  6021720, name:'Power Plant', class:8, rating:'D', mass: 64.00, integ:120, pwrcap:27.00, heateff:0.75, fdid:128064064, fdname:'Int_Powerplant_Size8_Class2' },
 		41830 : { mtype:'cpp', cost: 18065170, name:'Power Plant', class:8, rating:'C', mass: 80.00, integ:150, pwrcap:30.00, heateff:0.50, fdid:128064065, fdname:'Int_Powerplant_Size8_Class3' },
 		41820 : { mtype:'cpp', cost: 54195500, name:'Power Plant', class:8, rating:'B', mass:128.00, integ:180, pwrcap:33.00, heateff:0.45, fdid:128064066, fdname:'Int_Powerplant_Size8_Class4' },
 		41810 : { mtype:'cpp', cost:162586490, name:'Power Plant', class:8, rating:'A', mass: 80.00, integ:165, pwrcap:36.00, heateff:0.40, fdid:128064067, fdname:'Int_Powerplant_Size8_Class5' },
-		41811 : { mtype:'cpp', cost:  5509980, name:'Guardian Hybrid Power Plant', class:8, rating:'A', mass:93.60, integ:165, pwrcap:47.50, heateff:0.5 , fdid:128833994, fdname:'Int_GuardianPowerplant_Size8' }, // TODO: verify
+		41811 : { mtype:'cpp', cost:136585652, name:'Guardian Hybrid Power Plant', class:8, rating:'A', mass:93.60, integ:165, pwrcap:47.50, heateff:0.5 , fdid:128833994, fdname:'Int_GuardianPowerplant_Size8' }, // TODO: verify
 		
 		
 		42250 : { mtype:'ct', cost:     1980, name:'Thrusters', class:2, rating:'E', mass:  2.50, integ: 46, pwrdraw: 2.00, boottime:0, minmass:  24, optmass:  48, maxmass:  72, minmul:83, optmul:100, maxmul:103, thmload:1.3, fdid:128064068, fdname:'Int_Engine_Size2_Class1' },
