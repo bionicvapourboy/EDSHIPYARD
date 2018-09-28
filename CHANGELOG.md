@@ -1,26 +1,38 @@
 # CHANGELOG.md
 
-## 3.0.1 (unreleased)
+## 3.0.2 (unreleased)
 
 Features:
 
   - add Large Plasma Shock Cannon
-  - add Large Guardian Shard Cannon
-  - add Large Guardian Plasma Launcher
   - add Guardian FSD booster
   - add Large Dumbfire Missile
   - add Large Seeking Missile
   - add Large Torpedo Launcher
   - add Large Multi Cannon 
   - add Small Shock Cannon
-  - add Small Guardian plasma launcher
-  - add Small Guardian Shard Cannon
-  - add Small Guardian Gauss Cannon
   - add Guardian Hull Reinforcement Package 
   - add Guardian Module Reinforcement Package
   - add Guardian Shield Reinforcement Package
-  - add Guardian Hybrid Power Distributor
-  
+
+## 3.0.1
+
+Features:
+
+  - Added Small Guardian Shard Cannon (F-T)
+  - Added Medium Guardian Shard Cannon (F-T)
+  - Added Large Guardian Shard (F-T), 
+  - Added Guardian Hybrid Power Distributor from 1A to 8A
+  - Added Large Guardian Plasma Charger
+  - Added Small Guardian plasma Charger (F-T)
+  - Added Small Guardian Gauss Cannon 1D (F)
+
+Fixes:
+  - fixed Jitter on Small Shard Cannon (F - T)
+  - fixed prices of Guardian Hybrid PP from 2A to 8A
+  - fixed GPC 2B/2E price, rof, dps an breach damage
+  - fixed Krait not bein able to mount fighter hangars
+
 
 ## 3.0.0 (2018-09-25)
 
