@@ -2767,9 +2767,9 @@ var eddb = {
 		25410 : { mtype:'ifsdi', cost:21337340, name:'Frame Shift Drive Interdictor', class:4, rating:'A', mass:10.00, integ: 96, pwrdraw:0.57, boottime:15, timerng:16, facinglim:50, fdid:128666723, fdname:'Int_FSDInterdictor_Size4_Class5' },
 		
 		
-		 7540 : { mtype:'ifh', cost: 575660, name:'Fighter Hangar', class:5, rating:'D', mass:20.00, integ: 60, pwrdraw:0.25, boottime:5, vslots:1, vcount: 6, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1}, fdid:128727930, fdname:'Int_FighterBay_Size5_Class1' },
-		 7640 : { mtype:'ifh', cost:1869350, name:'Fighter Hangar', class:6, rating:'D', mass:40.00, integ: 80, pwrdraw:0.35, boottime:5, vslots:2, vcount: 8, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1}, fdid:128727931, fdname:'Int_FighterBay_Size6_Class1' },
-		 7740 : { mtype:'ifh', cost:2369330, name:'Fighter Hangar', class:7, rating:'D', mass:60.00, integ:120, pwrdraw:0.35, boottime:5, vslots:2, vcount:15, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1}, fdid:128727932, fdname:'Int_FighterBay_Size7_Class1' },
+		 7540 : { mtype:'ifh', cost: 575660, name:'Fighter Hangar', class:5, rating:'D', mass:20.00, integ: 60, pwrdraw:0.25, boottime:5, vslots:1, vcount: 6, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1,63:1}, fdid:128727930, fdname:'Int_FighterBay_Size5_Class1' },
+		 7640 : { mtype:'ifh', cost:1869350, name:'Fighter Hangar', class:6, rating:'D', mass:40.00, integ: 80, pwrdraw:0.35, boottime:5, vslots:2, vcount: 8, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1,63:1}, fdid:128727931, fdname:'Int_FighterBay_Size6_Class1' },
+		 7740 : { mtype:'ifh', cost:2369330, name:'Fighter Hangar', class:7, rating:'D', mass:60.00, integ:120, pwrdraw:0.35, boottime:5, vslots:2, vcount:15, reserved:{35:1,27:1,34:1,6:1,61:1,62:1,52:1,36:1,63:1}, fdid:128727932, fdname:'Int_FighterBay_Size7_Class1' }, // among others, Krait (63) does not have size 7 slot, remove ?
 		
 		
 		20150 : { mtype:'ifs', cost:      310, name:'Fuel Scoop', class:1, rating:'E', integ: 32, pwrdraw:0.14, boottime:4, scooprate:0.018, fdid:128666644, fdname:'Int_FuelScoop_Size1_Class1' },
