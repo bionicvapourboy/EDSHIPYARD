@@ -1,5 +1,5 @@
 {
-  "name": "ED:SHIPYARD",
+  "name": "EDSHIPYARD",
   "version": "3.0.1",
   "description": "",
   "main": "edsy.js",
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "taleden",
-  "license": "CREATIVE COMMONS ATTRIBUTION NON-COMMERCIAL 4.0"
+  "license": "CREATIVE COMMONS ATTRIBUTION NON-COMMERCIAL 4.0",
+  "devDependencies": {
+    "eslint": "^5.6.0"
+  }
 }
