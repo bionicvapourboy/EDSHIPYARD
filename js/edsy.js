@@ -1492,7 +1492,7 @@ window.edshipyard = new (function() {
                         } else if (mtypeid === "imrp") {
                             stats.integ_imrp += slot.getEffectiveAttrValue("integ");
                             stats.dmgprot *= (1 - (slot.getEffectiveAttrValue("dmgprot") / 100));
-                        } else if (mtypeid === "ihrp" || mtypeid === "imahrp") {
+                        } else if (mtypeid === "ihrp" || mtypeid === "imahrp" || mtypeid === "ghrp") {
                             kinmod_ihrp *= (1 - (slot.getEffectiveAttrValue("kinres") / 100));
                             thmmod_ihrp *= (1 - (slot.getEffectiveAttrValue("thmres") / 100));
                             expmod_ihrp *= (1 - (slot.getEffectiveAttrValue("expres") / 100));

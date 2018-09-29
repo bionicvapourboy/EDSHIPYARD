@@ -1679,8 +1679,8 @@ var eddb = {
 			{ mtypes:{cs:1} },
 			{ mtypes:{cft:1} }
 		],
-		military  : { mtypes:{ihrp:1, imahrp:1, imrp:1, iscb:1} },
-		internal  : { mtypes:{iafmu:1, icr:1, iclc:1, idlc:1, idc:1, ifsdi:1, ifh:1, ifs:1, cft:1, iftlc:1, ihblc:1, ihrp:1, imahrp:1, imrp:1, ipc:1, ipvh:1, iplc:1, inlc:1, ir:1, irlc:1, islc:1, iscb:1, isg:1, isbs:1, iss:1, fsdb: 1 } },
+		military  : { mtypes:{ihrp:1, imahrp:1, ghrp: 1, imrp:1, iscb:1} },
+		internal  : { mtypes:{iafmu:1, icr:1, iclc:1, idlc:1, idc:1, ifsdi:1, ifh:1, ifs:1, cft:1, iftlc:1, ihblc:1, ihrp:1, imahrp:1, ghrp: 1, imrp:1, ipc:1, ipvh:1, iplc:1, inlc:1, ir:1, irlc:1, islc:1, iscb:1, isg:1, isbs:1, iss:1, fsdb: 1 } },
 	}, // eddb.group{}
 	mtype : {
 		hel : {
@@ -2054,6 +2054,12 @@ var eddb = {
 			name:'Meta Alloy Hull Reinforcements',
 			modulenames:{'Meta Alloy Hull Reinforcement Package':1},
 			keyattrs:['hullrnf','caures'],
+		},
+
+		ghrp : {
+			name:'Guardian Hull Reinforcements',
+			modulenames:{'Guardian Hull Reinforcement Package':1},
+			keyattrs:['hullrnf','kinres','thmres','expres','caures'],
 		},
 		
 		imrp : {
@@ -2909,8 +2915,19 @@ var eddb = {
 		 9441 : { mtype:'imahrp', cost:292500, name:'Meta Alloy Hull Reinforcement Package', class:4, rating:'D', mass:  8, hullrnf:297, caures:3.0, fdid:null, fdname:'Int_MetaAlloyHullReinforcement_Size4_Class2' }, // TODO: fdid
 		 9551 : { mtype:'imahrp', cost:225000, name:'Meta Alloy Hull Reinforcement Package', class:5, rating:'E', mass: 32, hullrnf:324, caures:3.0, fdid:null, fdname:'Int_MetaAlloyHullReinforcement_Size5_Class1' }, // TODO: fdid
 		 9541 : { mtype:'imahrp', cost:675000, name:'Meta Alloy Hull Reinforcement Package', class:5, rating:'D', mass: 16, hullrnf:351, caures:3.0, fdid:null, fdname:'Int_MetaAlloyHullReinforcement_Size5_Class2' }, // TODO: fdid
-		
-		
+
+		 9651 : { mtype:'ghrp', cost:  9750, name:'Guardian Hull Reinforcement Package', class:1, rating:'E', mass:  2, pwrdraw:0.45, boottime:0, hullrnf: 100, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833945, fdname:'Int_GuardianHullReinforcement_Size1_Class1' },
+		 9641 : { mtype:'ghrp', cost: 29250, name:'Guardian Hull Reinforcement Package', class:1, rating:'D', mass:  1, pwrdraw:0.56, boottime:0, hullrnf: 138, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833946, fdname:'Int_GuardianHullReinforcement_Size1_Class2' },
+		 9751 : { mtype:'ghrp', cost: 23400, name:'Guardian Hull Reinforcement Package', class:2, rating:'E', mass:  4, pwrdraw:0.68, boottime:0, hullrnf: 188, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833947, fdname:'Int_GuardianHullReinforcement_Size2_Class1' },
+		 9741 : { mtype:'ghrp', cost: 70200, name:'Guardian Hull Reinforcement Package', class:2, rating:'D', mass:  2, pwrdraw:0.79, boottime:0, hullrnf: 238, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833948, fdname:'Int_GuardianHullReinforcement_Size2_Class2' },
+		 9851 : { mtype:'ghrp', cost: 56160, name:'Guardian Hull Reinforcement Package', class:3, rating:'E', mass:  8, pwrdraw:0.90, boottime:0, hullrnf: 288, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833949, fdname:'Int_GuardianHullReinforcement_Size3_Class1' },
+		 9841 : { mtype:'ghrp', cost:168480, name:'Guardian Hull Reinforcement Package', class:3, rating:'D', mass:  4, pwrdraw:1.01, boottime:0, hullrnf: 325, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833950, fdname:'Int_GuardianHullReinforcement_Size3_Class2' },
+		 9951 : { mtype:'ghrp', cost:134784, name:'Guardian Hull Reinforcement Package', class:4, rating:'E', mass: 16, pwrdraw:1.13, boottime:0, hullrnf: 375, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833951, fdname:'Int_GuardianHullReinforcement_Size4_Class1' },
+		 9941 : { mtype:'ghrp', cost:404352, name:'Guardian Hull Reinforcement Package', class:4, rating:'D', mass:  8, pwrdraw:1.24, boottime:0, hullrnf: 413, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833952, fdname:'Int_GuardianHullReinforcement_Size4_Class2' },
+		 10051: { mtype:'ghrp', cost:323482, name:'Guardian Hull Reinforcement Package', class:5, rating:'E', mass: 32, pwrdraw:1.35, boottime:0, hullrnf: 450, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833953, fdname:'Int_GuardianHullReinforcement_Size5_Class1' },
+		 10041: { mtype:'ghrp', cost:404352, name:'Guardian Hull Reinforcement Package', class:5, rating:'D', mass: 16, pwrdraw:1.46, boottime:0, hullrnf: 488, kinres:0.0, thmres:2.0, expres:0.0, caures:5.0, fdid:128833954, fdname:'Int_GuardianHullReinforcement_Size5_Class2' },
+
+
 		 8150 : { mtype:'imrp', cost:     5000, name:'Module Reinforcement Package', class:1, rating:'E', mass: 2.00, integ: 77, dmgprot:30, fdid:128737270, fdname:'Int_ModuleReinforcement_Size1_Class1' },
 		 8140 : { mtype:'imrp', cost:    15000, name:'Module Reinforcement Package', class:1, rating:'D', mass: 1.00, integ: 70, dmgprot:60, fdid:128737271, fdname:'Int_ModuleReinforcement_Size1_Class2' },
 		 8250 : { mtype:'imrp', cost:    12000, name:'Module Reinforcement Package', class:2, rating:'E', mass: 4.00, integ:115, dmgprot:30, fdid:128737272, fdname:'Int_ModuleReinforcement_Size2_Class1' },
