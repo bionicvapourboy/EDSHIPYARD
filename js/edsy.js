@@ -442,14 +442,15 @@ window.edshipyard = new (function() {
     }; // getJumpDistance()
 	
 	
-    var getJumpRange = function(fuelcap, mass, fuel, fsdOpt, fsdMul, fsdExp) {
+    var getJumpRange = function(fuelcap, mass, fuel, fsdOpt, fsdMul, fsdExp, jmpInc) {
         var range = 0;
+        var inc = jmpInc || 0;
         while (fuelcap > fuel) {
-            range += getJumpDistance(mass, fuel, fsdOpt, fsdMul, fsdExp);
+            range += getJumpDistance(mass, fuel, fsdOpt, fsdMul, fsdExp)+inc;
             fuelcap -= fuel;
             mass -= fuel;
         }
-        return range + getJumpDistance(mass, fuelcap, fsdOpt, fsdMul, fsdExp);
+        return range + getJumpDistance(mass, fuelcap, fsdOpt, fsdMul, fsdExp)+inc;
     }; // getJumpRange()
 	
 	
@@ -777,6 +778,7 @@ window.edshipyard = new (function() {
 		
 		
         getRelatedAttrModifier: function(attr) {
+          
             switch (attr) {
             case "rof":
                 var rofBase = getModuleAttrValue(this.module, "rof");
@@ -1409,6 +1411,7 @@ window.edshipyard = new (function() {
                 spinup_iscb: 0,
                 fuelcap: 0, 
                 cargocap: 0,
+                jmpinc: 0,
                 cabincap: 0,
                 scooprate: 0,
                 hullbst: 0,
@@ -1476,6 +1479,9 @@ window.edshipyard = new (function() {
                         stats.cabincap += slot.getEffectiveAttrValue("cabincap");
                         stats.hullbst += slot.getEffectiveAttrValue("hullbst");
                         stats.hullrnf += slot.getEffectiveAttrValue("hullrnf");
+
+                        
+                        stats.jmpinc += slot.getPowered() ? slot.getEffectiveAttrValue("jmpinc") : 0;
 						
                         if (slotgroup === "hardpoint") {
                             stats.cost_rearm += (slot.getEffectiveAttrValue("ammoclip") + slot.getEffectiveAttrValue("ammomax")) * (eddb.mtype[mtypeid].ammocost || 0);
@@ -1575,10 +1581,11 @@ window.edshipyard = new (function() {
             var maxfuel = slot.getEffectiveAttrValue("maxfuel");
             var fuelmul = slot.getEffectiveAttrValue("fuelmul");
             var fuelpower = slot.getEffectiveAttrValue("fuelpower");
-            stats._jump_laden    = getJumpDistance(            stats.mass + stats.fuelcap + stats.cargocap, min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower);
-            stats._jump_unladen  = getJumpDistance(            stats.mass + stats.fuelcap                 , min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower);
-            stats._range_laden   = getJumpRange(stats.fuelcap, stats.mass + stats.fuelcap + stats.cargocap, min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower);
-            stats._range_unladen = getJumpRange(stats.fuelcap, stats.mass + stats.fuelcap                 , min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower);
+  
+            stats._jump_laden    = getJumpDistance(            stats.mass + stats.fuelcap + stats.cargocap, min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower)+stats.jmpinc;
+            stats._jump_unladen  = getJumpDistance(            stats.mass + stats.fuelcap                 , min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower)+stats.jmpinc;
+            stats._range_laden   = getJumpRange(stats.fuelcap, stats.mass + stats.fuelcap + stats.cargocap, min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower, stats.jmpinc);
+            stats._range_unladen = getJumpRange(stats.fuelcap, stats.mass + stats.fuelcap                 , min(stats.fuelcap, maxfuel), optmass, fuelmul, fuelpower, stats.jmpinc);
 			
             // derived Thruster stats
             var boostcost = slot_hull.getEffectiveAttrValue("boostcost");
@@ -4726,15 +4733,17 @@ window.edshipyard = new (function() {
         var maxfuel = slot.getEffectiveAttrValue("maxfuel");
         var fuelmul = slot.getEffectiveAttrValue("fuelmul");
         var fuelpower = slot.getEffectiveAttrValue("fuelpower");
+        var jumprangeboost = current.fit.getStat("jmpinc");
+        
 		
         // get or compute derived stats
         var curTtlFuel = min(max(parseFloat(document.forms.stats.elements.stats_cur_fuel.value) || 0, 0), fuelcap);
         var curTtlCrgo = min(max(parseFloat(document.forms.stats.elements.stats_cur_cargo.value) || 0, 0), cargocap);
         var ldnNavJmp = current.fit.getStat("_jump_laden");
         var unlNavJmp = current.fit.getStat("_jump_unladen");
-        var curNavJmp = getJumpDistance(         mass + curTtlFuel + curTtlCrgo, min(curTtlFuel, maxfuel), optmass, fuelmul, fuelpower);
-        var maxNavJmp = getJumpDistance(         mass + min(fuelcap, maxfuel)  , min(fuelcap   , maxfuel), optmass, fuelmul, fuelpower);
-        var curNavRng = getJumpRange(curTtlFuel, mass + curTtlFuel + curTtlCrgo, min(curTtlFuel, maxfuel), optmass, fuelmul, fuelpower);
+        var curNavJmp = getJumpDistance(         mass + curTtlFuel + curTtlCrgo, min(curTtlFuel, maxfuel), optmass, fuelmul, fuelpower)+jumprangeboost;
+        var maxNavJmp = getJumpDistance(         mass + min(fuelcap, maxfuel)  , min(fuelcap   , maxfuel), optmass, fuelmul, fuelpower)+jumprangeboost;
+        var curNavRng = getJumpRange(curTtlFuel, mass + curTtlFuel + curTtlCrgo, min(curTtlFuel, maxfuel), optmass, fuelmul, fuelpower, jumprangeboost);
         var ldnNavRng = current.fit.getStat("_range_laden");
         var unlNavRng = current.fit.getStat("_range_unladen");
         var scpNavJmp = min(curTtlFuel, maxfuel) / scooprate;

@@ -1220,6 +1220,8 @@ var eddb = {
 		duration   : { order:119, abbr:'Dur',  name:'Duration',             unit:'s',           min:    0,          time:1, default:  0, scale:0,           desc:'Duration (in seconds)' }, // ecm,heatsink,scb
 		thmdrain   : { order:120, abbr:'ThD',  name:'Thermal Drain',        unit:'/s',          min:    0,                  default:  0, scale:1,           desc:'Waste heat drained (in units per second)' }, // heatsink
 		dmgprot    : { order:121, abbr:'DmgP', name:'Damage Protection',    unit:'%',           min:    0, max:100,         default:  0, scale:0,           desc:'Portion of incoming module damage that is absorbed' }, // imrp
+		jmpinc     : { order:122, abbr:'JmpI', name:'Jump Range Increase',  unit:'LY',          min:    0, max:10.50,       default:  0, scale:1,           desc:'Flat LYs added to jump range' }, // fsdb
+
 	}, // eddb.attribute{}
 	fdfieldattr : {
 		OutfittingFieldType_AmmoClipSize                    : 'ammoclip',
@@ -1289,14 +1291,15 @@ var eddb = {
 		Override_BurstSize                                  : 'bstsize',
 		OutfittingFieldType_BurstRate                       : 'bstrof',
 		OutfittingFieldType_BurstSize                       : 'bstsize',
+		FSDJumpRangeBoost									: 'jmpinc',
 /* coming in 2.5/3.0 ?
 		WingDamageReduction,
 		WingMinDuration,
 		WingMaxDuration,
 		ShieldSacrificeAmountRemoved,
 		ShieldSacrificeAmountGiven,
-		FSDJumpRangeBoost,
-		FSDFuelUseIncrease
+		
+		FSDFuelUseIncrease -> deprecated
 */
 	}, // eddb.fdfieldattr{}
 	fdattrmod : {
@@ -1677,7 +1680,7 @@ var eddb = {
 			{ mtypes:{cft:1} }
 		],
 		military  : { mtypes:{ihrp:1, imahrp:1, imrp:1, iscb:1} },
-		internal  : { mtypes:{iafmu:1, icr:1, iclc:1, idlc:1, idc:1, ifsdi:1, ifh:1, ifs:1, cft:1, iftlc:1, ihblc:1, ihrp:1, imahrp:1, imrp:1, ipc:1, ipvh:1, iplc:1, inlc:1, ir:1, irlc:1, islc:1, iscb:1, isg:1, isbs:1, iss:1} },
+		internal  : { mtypes:{iafmu:1, icr:1, iclc:1, idlc:1, idc:1, ifsdi:1, ifh:1, ifs:1, cft:1, iftlc:1, ihblc:1, ihrp:1, imahrp:1, imrp:1, ipc:1, ipvh:1, iplc:1, inlc:1, ir:1, irlc:1, islc:1, iscb:1, isg:1, isbs:1, iss:1, fsdb: 1 } },
 	}, // eddb.group{}
 	mtype : {
 		hel : {
@@ -1967,6 +1970,12 @@ var eddb = {
 			name:'Cargo Racks',
 			modulenames:{},
 			keyattrs:['cargocap'],
+		},
+
+		fsdb : {
+			name:'Guardian Frameshift Booster',
+			modulenames:{},
+			keyattrs:['jmpinc'],
 		},
 		
 		iclc : {
@@ -2707,8 +2716,13 @@ var eddb = {
 		  161 : { mtype:'icr', cost:  12560, name:'Corrosion Resistant Cargo Rack (Cap: 2)',  class:1, rating:'F', cargocap: 2, fdid:128681992, fdname:'Int_CorrosionProofCargoRack_Size1_Class2' },
 	//	  251 : { mtype:'icr', cost:    NaN, name:'Corrosion Resistant Cargo Rack (Cap: 4)',  class:2, rating:'E', cargocap: 4, fdid:     null, fdname:'Int_CorrosionProofCargoRack_Size2_Class1' }, // TODO: verify; cost,fdid
 		  451 : { mtype:'icr', cost:  94330, name:'Corrosion Resistant Cargo Rack (Cap: 16)', class:4, rating:'E', cargocap:16, fdid:128833944, fdname:'Int_CorrosionProofCargoRack_Size4_Class1' }, // TODO: verify; cost
-		
-		
+		  
+		  551 : { mtype:'fsdb', cost: 394896, name:'Guardian Frame Shift Booster', class:1, rating:'h', mass: 1.30, integ: 32, pwrdraw:0.75, boottime:15, jmpinc:  4.00, fdid:128833975, fdname:'Int_GuardianFSDBooster_Size1' },
+		  552 : { mtype:'fsdb', cost: 790257, name:'Guardian Frame Shift Booster', class:2, rating:'h', mass: 1.30, integ: 32, pwrdraw:0.98, boottime:15, jmpinc:  6.00, fdid:128833976, fdname:'Int_GuardianFSDBooster_Size2' },
+          553 : { mtype:'fsdb', cost:1579920, name:'Guardian Frame Shift Booster', class:3, rating:'h', mass: 1.30, integ: 32, pwrdraw:1.27, boottime:15, jmpinc:  7.75, fdid:128833977, fdname:'Int_GuardianFSDBooster_Size3' },		
+		  554 : { mtype:'fsdb', cost:1579920, name:'Guardian Frame Shift Booster', class:4, rating:'h', mass: 1.30, integ: 32, pwrdraw:1.65, boottime:15, jmpinc:  9.25, fdid:128833978, fdname:'Int_GuardianFSDBooster_Size4' },
+		  555 : { mtype:'fsdb', cost:6321023, name:'Guardian Frame Shift Booster', class:5, rating:'h', mass: 1.30, integ: 32, pwrdraw:2.14, boottime:15, jmpinc: 10.50, fdid:128833979, fdname:'Int_GuardianFSDBooster_Size5' },
+
 		22150 : { mtype:'iclc', cost:    600, name:'Collector Limpet Controller', class:1, rating:'E', mass:  0.50, integ: 24, pwrdraw:0.14, boottime:6, maxlimpet: 1, targetrng: 800, limpettime:300, maxspd:200, multispd:60, fdid:128671229, fdname:'Int_DroneControl_Collection_Size1_Class1' },
 		22140 : { mtype:'iclc', cost:   1200, name:'Collector Limpet Controller', class:1, rating:'D', mass:  0.50, integ: 32, pwrdraw:0.18, boottime:6, maxlimpet: 1, targetrng: 600, limpettime:600, maxspd:200, multispd:60, fdid:128671230, fdname:'Int_DroneControl_Collection_Size1_Class2' },
 		22130 : { mtype:'iclc', cost:   2400, name:'Collector Limpet Controller', class:1, rating:'C', mass:  1.30, integ: 40, pwrdraw:0.23, boottime:6, maxlimpet: 1, targetrng:1000, limpettime:510, maxspd:200, multispd:60, fdid:128671231, fdname:'Int_DroneControl_Collection_Size1_Class3' },
